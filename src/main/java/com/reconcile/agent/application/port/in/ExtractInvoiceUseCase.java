@@ -4,5 +4,5 @@ import com.reconcile.agent.domain.model.Invoice;
 import reactor.core.publisher.Mono;
 
 public interface ExtractInvoiceUseCase {
-    Mono<Invoice> extract(String rawText);
+    Mono<Invoice> extract(String rawText, String runId);
 }

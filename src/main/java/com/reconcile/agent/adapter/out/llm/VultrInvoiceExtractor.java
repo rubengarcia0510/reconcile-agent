@@ -69,7 +69,7 @@ class VultrInvoiceExtractor implements InvoiceExtractor {
             throw new IllegalStateException("The model answer does not contain a JSON object");
         }
         ExtractedInvoice e = jsonMapper.readValue(content.substring(start, end + 1), ExtractedInvoice.class);
-        return new Invoice(null, e.supplier(), e.number(), e.amount(), e.currency(), e.issueDate());
+        return new Invoice(null, null, e.supplier(), e.number(), e.amount(), e.currency(), e.issueDate());
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
