@@ -10,4 +10,6 @@ public interface AnomalyRepository {
     Mono<Anomaly> findById(String id);
 
     Flux<Anomaly> findByRunId(String runId);
+
+    Mono<Void> deleteByRunId(String runId);
 }
