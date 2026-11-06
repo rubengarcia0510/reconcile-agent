@@ -41,6 +41,11 @@ class AnomalyPersistenceAdapter implements AnomalyRepository {
         return repository.findByRunId(runId).map(this::toDomain);
     }
 
+    @Override
+    public Mono<Void> deleteByRunId(String runId) {
+        return repository.deleteByRunId(runId);
+    }
+
     private Anomaly toDomain(Doc d) {
         return new Anomaly(d.id(), d.runId(), d.type(), d.invoiceId(),
                 d.transactionId(), d.explanation(), d.status());
