@@ -1,0 +1,15 @@
+<header class="topbar">
+  <div class="container">
+    <h1>Reconcile Agent</h1>
+    <p>Upload invoices and a bank statement. The agent reads them, reconciles the payments and flags what needs a human decision.</p>
+  </div>
+</header>
+<main class="container">
+  @if (store.error(); as message) {
+    <p class="notice error" role="alert">{{ message }}</p>
+  }
+  <app-upload />
+  <app-summary />
+  <app-anomaly-queue />
+  <app-invoice-table />
+</main>

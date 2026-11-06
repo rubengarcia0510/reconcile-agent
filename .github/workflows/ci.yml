@@ -16,3 +16,16 @@ jobs:
           java-version: '25'
       - run: chmod +x gradlew
       - run: ./gradlew --no-daemon build
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - run: npm run build
