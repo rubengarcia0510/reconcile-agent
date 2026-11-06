@@ -18,6 +18,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.apache.pdfbox:pdfbox:3.0.5")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
 	implementation("org.springframework.boot:spring-boot-starter-validation")

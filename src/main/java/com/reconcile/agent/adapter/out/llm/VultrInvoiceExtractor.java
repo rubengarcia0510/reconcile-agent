@@ -21,7 +21,7 @@ class VultrInvoiceExtractor implements InvoiceExtractor {
             Reply with ONE JSON object only. No markdown, no explanations.
             Fields:
             - supplier: string
-            - number: string, exactly as written
+            - number: string, the invoice number. If the document shows a point of sale and a voucher number separately, combine them as POINT-NUMBER (for example 0005-00001234). Ignore purchase order, delivery note, CAE and bank account numbers.
             - amount: number, the invoice total, with a decimal point and no thousands separators
             - currency: ISO 4217 code
             - issueDate: string, YYYY-MM-DD (dates in the text are usually day/month/year)
